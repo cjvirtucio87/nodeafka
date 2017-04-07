@@ -21,7 +21,7 @@ export const runZookeeperServer = runFactory(
                                     );
 
 export const runKafkaServer = runFactory(
-                                    'Running kafka server..', 
+                                    `Running kafka server using "${constants.KAFKA_SERVER_PROPS}"..`, 
                                     spawners.kafkaServer.bind(null, constants.KAFKA_SERVER_PROPS)
                                     );
 
