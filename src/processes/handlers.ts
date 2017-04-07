@@ -1,4 +1,4 @@
-import { ZOOKEEPER_BIND_MSG } from './constants';
+import { ZOOKEEPER_BIND_MSG } from '../constants';
 
 export const zooOnCreate = cp => {
     const onData = data => {

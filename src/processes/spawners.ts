@@ -1,5 +1,5 @@
 import { spawn } from 'child_process';
-import * as constants from './constants';
+import * as constants from '../constants';
 
 const spawnFactory = (proc: string) => (args) => spawn(proc, args);
 

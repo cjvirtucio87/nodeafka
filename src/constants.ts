@@ -1,7 +1,7 @@
-import getServerFile from './server-file';
-import getTopicName from './topic-name';
-import getReplicationFactor from './replication-factor';
-import getPartitionCount from './partition-count';
+import getServerFile from './utils/server-file';
+import getTopicName from './utils/topic-name';
+import getReplicationFactor from './utils/replication-factor';
+import getPartitionCount from './utils/partition-count';
 
 import { join, sep } from 'path';
 

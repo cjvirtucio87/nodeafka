@@ -5,12 +5,12 @@
   "main": "main.js",
   "scripts": {
     "start": "tsc && node build/main",
-    "serve": "tsc && node build/server",
-    "describe": "tsc && node build/command --command=describe",
-    "create": "tsc && node build/command --command=create",    
-    "zookeeper": "tsc && node build/server --type=zookeeper",
-    "producer": "tsc && node build/producer",
-    "consumer": "tsc && node build/consumer",
+    "serve": "tsc && node build/servers/server",
+    "describe": "tsc && node build/commands/command --command=describe",
+    "create": "tsc && node build/commands/command --command=create",    
+    "zookeeper": "tsc && node build/servers/server --type=zookeeper",
+    "producer": "tsc && node build/actors/producer",
+    "consumer": "tsc && node build/actors/consumer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

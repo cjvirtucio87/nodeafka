@@ -1,4 +1,4 @@
-import { runKafkaConsumer } from './runners';
+import { runKafkaConsumer } from '../processes/runners';
 
 const run = runKafkaConsumer(() => console.log('Done.'));
 

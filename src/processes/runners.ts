@@ -1,4 +1,4 @@
-import * as constants from './constants';
+import * as constants from '../constants';
 import * as spawners from './spawners';
 import { zooOnCreate, kafProdOnCreate } from './handlers';
 
@@ -27,7 +27,7 @@ export const runKafkaServer = runFactory(
 
 // actors
 export const runKafkaProducer = runFactory(
-                                'Running producer..',
+                                `Running producer using the following arguments: "${constants.KAFKA_PRODUCER_PROPS}"`,
                                 spawners.kafkaProducer.bind(null, constants.KAFKA_PRODUCER_PROPS),
                                 kafProdOnCreate
                             );

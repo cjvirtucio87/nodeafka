@@ -1,4 +1,4 @@
-import { runTopicsCreate } from './runners';
+import { runTopicsCreate } from '../processes/runners';
 
 const run = runTopicsCreate(() => console.log('Done.'));
 
