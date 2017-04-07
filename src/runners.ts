@@ -33,6 +33,12 @@ export const runKafkaProducer = runFactory(
                             );
 
 export const runKafkaConsumer = runFactory(
-                                `Running consumer using "${constants.KAFKA_CONSUMER_PROPS}"..`,
+                                `Running consumer using the following arguments: "${constants.KAFKA_CONSUMER_PROPS}"..`,
                                 spawners.kafkaConsumer.bind(null, constants.KAFKA_CONSUMER_PROPS)
+                            )
+
+// commands
+export const runTopicsDescribe = runFactory(
+                                `Running topics describe using the following arguments: "${constants.KAFKA_TOPICS_DESCRIBE_PROPS}"..`,
+                                spawners.kafkaTopics.bind(null, constants.KAFKA_TOPICS_DESCRIBE_PROPS)
                             )

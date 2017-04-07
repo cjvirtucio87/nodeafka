@@ -10,3 +10,6 @@ export const kafkaServer = spawnFactory(constants.KAFKA_SERVER_PATH);
 // actors
 export const kafkaProducer = spawnFactory(constants.KAFKA_PRODUCER_PATH);
 export const kafkaConsumer = spawnFactory(constants.KAFKA_CONSUMER_PATH);
+
+// others
+export const kafkaTopics = spawnFactory(constants.KAFKA_TOPICS_PATH);

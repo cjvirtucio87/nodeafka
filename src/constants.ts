@@ -38,3 +38,10 @@ export const KAFKA_PRODUCER_PROPS = ['--broker-list', 'localhost:9090', '--topic
 // consumer
 export const KAFKA_CONSUMER_PATH = KAFKA_BIN_WINDOWS + sep + 'kafka-console-consumer.bat';
 export const KAFKA_CONSUMER_PROPS = ['--bootstrap-server', 'localhost:9090', '--from-beginning', '--topic', TOPIC_NAME];
+
+/*
+    ### RESOURCES ###
+*/
+// topics
+export const KAFKA_TOPICS_PATH = KAFKA_BIN_WINDOWS + sep + 'kafka-topics.bat';
+export const KAFKA_TOPICS_DESCRIBE_PROPS = ['--describe', '--zookeeper', 'localhost:2181', '--topic', TOPIC_NAME];
