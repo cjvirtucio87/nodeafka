@@ -33,6 +33,6 @@ export const runKafkaProducer = runFactory(
                             );
 
 export const runKafkaConsumer = runFactory(
-                                'Running consumer..',
+                                `Running consumer using "${constants.KAFKA_CONSUMER_PROPS}"..`,
                                 spawners.kafkaConsumer.bind(null, constants.KAFKA_CONSUMER_PROPS)
                             )
