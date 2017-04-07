@@ -10,3 +10,8 @@ export const zooOnCreate = cp => {
 
     cp.stdout.on('data', onData);
 }
+
+export const kafProdOnCreate = cp => {
+    console.log('Accepting inputs from CLI..');
+    process.stdin.pipe(cp.stdin);
+}
