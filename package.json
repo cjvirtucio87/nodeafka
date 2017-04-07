@@ -6,10 +6,14 @@
   "scripts": {
     "start": "tsc && node build/main",
     "serve": "tsc && node build/server",
+    "zookeeper": "tsc && node build/server --type=zookeeper",
     "producer": "tsc && node build/producer",
     "consumer": "tsc && node build/consumer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }
