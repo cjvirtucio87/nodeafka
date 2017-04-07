@@ -1,5 +1,5 @@
-import { ZOOKEEPER_SERVER_PROPS, KAFKA_SERVER_PROPS, KAFKA_PRODUCER_PROPS } from './constants';
-import { zookeeperServer, kafkaServer, kafkaProducer } from './spawners';
+import * as constants from './constants';
+import * as spawners from './spawners';
 import { zooOnCreate, kafProdOnCreate } from './handlers';
 
 const runFactory = (msg: string, spawner: Function, onCreate?: Function) => (onFinish: Function) => () => {
@@ -16,18 +16,23 @@ const runFactory = (msg: string, spawner: Function, onCreate?: Function) => (onF
 // servers
 export const runZookeeperServer = runFactory(
                                     'Running zookeeper..', 
-                                    zookeeperServer.bind(null, ZOOKEEPER_SERVER_PROPS),
+                                    spawners.zookeeperServer.bind(null, constants.ZOOKEEPER_SERVER_PROPS),
                                     zooOnCreate
                                     );
 
 export const runKafkaServer = runFactory(
                                     'Running kafka server..', 
-                                    kafkaServer.bind(null, KAFKA_SERVER_PROPS)
+                                    spawners.kafkaServer.bind(null, constants.KAFKA_SERVER_PROPS)
                                     );
 
 // actors
 export const runKafkaProducer = runFactory(
                                 'Running producer..',
-                                kafkaProducer.bind(null, KAFKA_PRODUCER_PROPS),
+                                spawners.kafkaProducer.bind(null, constants.KAFKA_PRODUCER_PROPS),
                                 kafProdOnCreate
                             );
+
+export const runKafkaConsumer = runFactory(
+                                'Running consumer..',
+                                spawners.kafkaConsumer.bind(null, constants.KAFKA_CONSUMER_PROPS)
+                            )

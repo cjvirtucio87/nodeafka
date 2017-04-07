@@ -1,11 +1,12 @@
 import { spawn } from 'child_process';
-import { ZOOKEEPER_SERVER_PATH, KAFKA_SERVER_PATH, KAFKA_PRODUCER_PATH } from './constants';
+import * as constants from './constants';
 
 const spawnFactory = (proc: string) => (args) => spawn(proc, args);
 
 // servers
-export const zookeeperServer = spawnFactory(ZOOKEEPER_SERVER_PATH);
-export const kafkaServer = spawnFactory(KAFKA_SERVER_PATH);
+export const zookeeperServer = spawnFactory(constants.ZOOKEEPER_SERVER_PATH);
+export const kafkaServer = spawnFactory(constants.KAFKA_SERVER_PATH);
 
 // actors
-export const kafkaProducer = spawnFactory(KAFKA_PRODUCER_PATH);
+export const kafkaProducer = spawnFactory(constants.KAFKA_PRODUCER_PATH);
+export const kafkaConsumer = spawnFactory(constants.KAFKA_CONSUMER_PATH);
