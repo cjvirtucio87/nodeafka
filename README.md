@@ -1,0 +1,1 @@
+A simple script that runs the zookeeper and kafka servers in the Kafka Quick Start guide.
