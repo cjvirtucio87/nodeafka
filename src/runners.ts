@@ -2,13 +2,13 @@ import { ZOOKEEPER_SERVER_PROPS, KAFKA_SERVER_PROPS } from './constants';
 import { zookeeperServer, kafkaServer } from './spawners';
 import { zooOnCreate } from './handlers';
 
-const runFactory = (msg: string, spawner: Function, onCreate?: Function) => (onClose: Function) => () => {
+const runFactory = (msg: string, spawner: Function, onCreate?: Function) => (onFinish: Function) => () => {
     console.log(msg);
     const cp = spawner();
     if (onCreate) onCreate(cp);
     cp.stdout.pipe(process.stdout);
 
-    cp.on('finish', onClose);
+    cp.on('finish', onFinish);
 }
 
 export const runZookeeperServer = runFactory('Running zookeeper..', 
