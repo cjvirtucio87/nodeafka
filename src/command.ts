@@ -1,4 +1,5 @@
 import * as describe from './describe';
+import * as create from './create';
 import { find } from 'lodash';
 
 function getCommandArg() {
@@ -16,6 +17,8 @@ function runCommand() {
     switch (command) {
     case 'describe':
         return describe.default();
+    case 'create':
+        return create.default();
     default:
         throw new Error("ERROR: Must set a command.");
     }

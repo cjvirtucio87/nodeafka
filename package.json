@@ -7,6 +7,7 @@
     "start": "tsc && node build/main",
     "serve": "tsc && node build/server",
     "describe": "tsc && node build/command --command=describe",
+    "create": "tsc && node build/command --command=create",    
     "zookeeper": "tsc && node build/server --type=zookeeper",
     "producer": "tsc && node build/producer",
     "consumer": "tsc && node build/consumer",

@@ -42,3 +42,8 @@ export const runTopicsDescribe = runFactory(
                                 `Running topics describe using the following arguments: "${constants.KAFKA_TOPICS_DESCRIBE_PROPS}"..`,
                                 spawners.kafkaTopics.bind(null, constants.KAFKA_TOPICS_DESCRIBE_PROPS)
                             )
+
+export const runTopicsCreate = runFactory(
+                                `Running topics create using the following arguments: "${constants.KAFKA_TOPICS_CREATE_PROPS}"..`,
+                                spawners.kafkaTopics.bind(null, constants.KAFKA_TOPICS_CREATE_PROPS)
+                            )
