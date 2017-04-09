@@ -17,11 +17,15 @@ const KAFKA_BIN_PATH = getKafkaBin('path');
 const KAFKA_BIN_EXT = getKafkaBin('ext');
 
 // config
-const KAFKA_CONFIG = join(KAFKA_PATH, 'config');
-const SERVER_FILE = getConfigFile('--server', '.properties', 'server', KAFKA_CONFIG);
+export const KAFKA_CONFIG_PATH = join(KAFKA_PATH, 'config');
+export const CUSTOM_CONFIG_PATH = join('config', 'kafka');
+const SERVER_CONFIG = getConfigFile('--server', '.properties', 'server');
 const TOPIC_NAME = getArgv('--topic', '');
 const REPLICATION_FACTOR = getArgv('--replication-factor', '1');
 const PARTITION_COUNT = getArgv('--partitions', '1');
+const CONNECT_CONFIG = getConfigFile('--connect', '.properties', 'connect-standalone');
+const CONNECT_SOURCE_CONFIG = getConfigFile('--connect-source', '.properties', 'connect-file-source');
+const CONNECT_SINK_CONFIG = getConfigFile('--connect-sink', '.properties', 'connect-file-sink');
 
 // others
 export const COMMAND_NAME = getArgv('--command', '');
@@ -32,31 +36,31 @@ export const SERVER_TYPE = getArgv('--server-type', 'kafka');
 */ 
 // zookeeper
 export const ZOOKEEPER_SERVER_PATH = KAFKA_BIN_PATH + sep + 'zookeeper-server-start' + KAFKA_BIN_EXT;
-export const ZOOKEEPER_SERVER_PROPS = [KAFKA_CONFIG + sep + 'zookeeper.properties'];
+export const ZOOKEEPER_SERVER_ARGS = [KAFKA_CONFIG_PATH + sep + 'zookeeper.properties'];
 export const ZOOKEEPER_BIND_MSG = /INFO binding to port/;
 
 // kafka
 export const KAFKA_SERVER_PATH = KAFKA_BIN_PATH + sep + 'kafka-server-start' + KAFKA_BIN_EXT;
-export const KAFKA_SERVER_PROPS = [SERVER_FILE];
+export const KAFKA_SERVER_ARGS = [SERVER_CONFIG];
 
 /*
     ### ACTORS ###
 */
 // producer
 export const KAFKA_PRODUCER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-producer' + KAFKA_BIN_EXT;
-export const KAFKA_PRODUCER_PROPS = ['--broker-list', 'localhost:9092', '--topic', TOPIC_NAME ];
+export const KAFKA_PRODUCER_ARGS = ['--broker-list', 'localhost:9090', '--topic', TOPIC_NAME ];
 
 // consumer
 export const KAFKA_CONSUMER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-consumer' + KAFKA_BIN_EXT;
-export const KAFKA_CONSUMER_PROPS = ['--bootstrap-server', 'localhost:9092', '--from-beginning', '--topic', TOPIC_NAME];
+export const KAFKA_CONSUMER_ARGS = ['--bootstrap-server', 'localhost:9090', '--from-beginning', '--topic', TOPIC_NAME];
 
 /*
     ### RESOURCES ###
 */
 // topics
 export const KAFKA_TOPICS_PATH = KAFKA_BIN_PATH + sep + 'kafka-topics' + KAFKA_BIN_EXT;
-export const KAFKA_TOPICS_DESCRIBE_PROPS = ['--describe', '--zookeeper', 'localhost:2181', '--topic', TOPIC_NAME];
-export const KAFKA_TOPICS_CREATE_PROPS = [
+export const KAFKA_TOPICS_DESCRIBE_ARGS = ['--describe', '--zookeeper', 'localhost:2181', '--topic', TOPIC_NAME];
+export const KAFKA_TOPICS_CREATE_ARGS = [
     '--create', 
     '--zookeeper', 
     'localhost:2181',
@@ -67,3 +71,10 @@ export const KAFKA_TOPICS_CREATE_PROPS = [
     '--topic', 
     TOPIC_NAME
     ];
+export const KAFKA_TOPICS_LIST_ARGS = ['--list', '--zookeeper', 'localhost:2181'];
+
+/*
+    ### KAFKA CONNECT ###
+*/
+export const KAFKA_CONNECT_PATH = KAFKA_BIN_PATH + sep + 'connect-standalone' + KAFKA_BIN_EXT;
+export const KAFKA_CONNECT_ARGS = [CONNECT_CONFIG, CONNECT_SOURCE_CONFIG, CONNECT_SINK_CONFIG];

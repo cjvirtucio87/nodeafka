@@ -11,5 +11,8 @@ export const kafkaServer = spawnFactory(constants.KAFKA_SERVER_PATH);
 export const kafkaProducer = spawnFactory(constants.KAFKA_PRODUCER_PATH);
 export const kafkaConsumer = spawnFactory(constants.KAFKA_CONSUMER_PATH);
 
-// others
+// resources
 export const kafkaTopics = spawnFactory(constants.KAFKA_TOPICS_PATH);
+
+// connect
+export const kafkaConnect = spawnFactory(constants.KAFKA_CONNECT_PATH);
