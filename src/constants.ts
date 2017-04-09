@@ -31,30 +31,30 @@ export const SERVER_TYPE = getArgv('--server-type', 'kafka');
     ### SERVERS ###
 */ 
 // zookeeper
-export const ZOOKEEPER_SERVER_PATH = KAFKA_BIN_PATH + sep + 'zookeeper-server-start.bat';
+export const ZOOKEEPER_SERVER_PATH = KAFKA_BIN_PATH + sep + 'zookeeper-server-start' + KAFKA_BIN_EXT;
 export const ZOOKEEPER_SERVER_PROPS = [KAFKA_CONFIG + sep + 'zookeeper.properties'];
 export const ZOOKEEPER_BIND_MSG = /INFO binding to port/;
 
 // kafka
-export const KAFKA_SERVER_PATH = KAFKA_BIN_PATH + sep + 'kafka-server-start.bat';
+export const KAFKA_SERVER_PATH = KAFKA_BIN_PATH + sep + 'kafka-server-start' + KAFKA_BIN_EXT;
 export const KAFKA_SERVER_PROPS = [SERVER_FILE];
 
 /*
     ### ACTORS ###
 */
 // producer
-export const KAFKA_PRODUCER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-producer.bat';
+export const KAFKA_PRODUCER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-producer' + KAFKA_BIN_EXT;
 export const KAFKA_PRODUCER_PROPS = ['--broker-list', 'localhost:9092', '--topic', TOPIC_NAME ];
 
 // consumer
-export const KAFKA_CONSUMER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-consumer.bat';
+export const KAFKA_CONSUMER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-consumer' + KAFKA_BIN_EXT;
 export const KAFKA_CONSUMER_PROPS = ['--bootstrap-server', 'localhost:9092', '--from-beginning', '--topic', TOPIC_NAME];
 
 /*
     ### RESOURCES ###
 */
 // topics
-export const KAFKA_TOPICS_PATH = KAFKA_BIN_PATH + sep + 'kafka-topics.bat';
+export const KAFKA_TOPICS_PATH = KAFKA_BIN_PATH + sep + 'kafka-topics' + KAFKA_BIN_EXT;
 export const KAFKA_TOPICS_DESCRIBE_PROPS = ['--describe', '--zookeeper', 'localhost:2181', '--topic', TOPIC_NAME];
 export const KAFKA_TOPICS_CREATE_PROPS = [
     '--create', 
