@@ -9,6 +9,11 @@ Set your kafka installation as your `KAFKA_PATH` environment variable.
 
 ### USAGE
 
+Install node_modules:
+```
+npm install
+```
+
 Run zookeeper:
 ```
 npm run zookeeper
