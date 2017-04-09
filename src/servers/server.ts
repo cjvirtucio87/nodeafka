@@ -1,8 +1,3 @@
-/* 
-    --- WINDOWS ONLY ---
-    Change file extensions in constants to .sh for UNIX.
-*/
-
 import { SERVER_TYPE } from '../constants';
 import runZookeeper from './zookeeper';
 import runKafka from './kafka-server';
