@@ -44,7 +44,7 @@ export const KAFKA_SERVER_PROPS = [SERVER_FILE];
 */
 // producer
 export const KAFKA_PRODUCER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-producer.bat';
-export const KAFKA_PRODUCER_PROPS = ['--broker-list', 'localhost:9090', '--topic', TOPIC_NAME ];
+export const KAFKA_PRODUCER_PROPS = ['--broker-list', 'localhost:9092', '--topic', TOPIC_NAME ];
 
 // consumer
 export const KAFKA_CONSUMER_PATH = KAFKA_BIN_PATH + sep + 'kafka-console-consumer.bat';
