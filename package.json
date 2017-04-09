@@ -6,9 +6,9 @@
   "scripts": {
     "start": "tsc && node build/main",
     "serve": "tsc && node build/servers/server",
-    "describe": "tsc && node build/commands/command --command=describe",
-    "create": "tsc && node build/commands/command --command=create",    
-    "zookeeper": "tsc && node build/servers/server --type=zookeeper",
+    "describe": "tsc && node build/commands/command --command describe",
+    "create": "tsc && node build/commands/command --command create",    
+    "zookeeper": "tsc && node build/servers/server --server-type zookeeper",
     "producer": "tsc && node build/actors/producer",
     "consumer": "tsc && node build/actors/consumer",
     "test": "echo \"Error: no test specified\" && exit 1"
