@@ -1,7 +1,6 @@
-import getServerFile from './utils/server-file';
-import getTopicName from './utils/topic-name';
-import getReplicationFactor from './utils/replication-factor';
-import getPartitionCount from './utils/partition-count';
+import parsed from './utils/argv-parser';
+import getArgv from './utils/argv-getter';
+import getConfigFile from './utils/config-file';
 
 import { join, sep } from 'path';
 
@@ -16,10 +15,14 @@ const KAFKA_BIN_WINDOWS = join(KAFKA_PATH, 'bin', 'windows');
 
 // config
 const KAFKA_CONFIG = join(KAFKA_PATH, 'config');
-const SERVER_FILE = getServerFile(KAFKA_CONFIG);
-const TOPIC_NAME = getTopicName();
-const REPLICATION_FACTOR = getReplicationFactor();
-const PARTITION_COUNT = getPartitionCount();
+const SERVER_FILE = getConfigFile('--server', '.properties', 'server', KAFKA_CONFIG);
+const TOPIC_NAME = getArgv('--topic', '');
+const REPLICATION_FACTOR = getArgv('--replication-factor', '1');
+const PARTITION_COUNT = getArgv('--partitions', '1');
+
+// others
+export const COMMAND_NAME = getArgv('--command', '');
+export const SERVER_TYPE = getArgv('--server-type', 'kafka');
 
 /*
     ### SERVERS ###
@@ -42,7 +45,7 @@ export const KAFKA_PRODUCER_PROPS = ['--broker-list', 'localhost:9090', '--topic
 
 // consumer
 export const KAFKA_CONSUMER_PATH = KAFKA_BIN_WINDOWS + sep + 'kafka-console-consumer.bat';
-export const KAFKA_CONSUMER_PROPS = ['--bootstrap-server', 'localhost:9090', '--from-beginning', '--topic', TOPIC_NAME];
+export const KAFKA_CONSUMER_PROPS = ['--bootstrap-server', 'localhost:9092', '--from-beginning', '--topic', TOPIC_NAME];
 
 /*
     ### RESOURCES ###
