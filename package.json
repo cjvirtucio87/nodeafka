@@ -9,8 +9,10 @@
     "serve": "tsc && node build/servers/server",
     "create": "tsc && node build/commands/command --command create",
     "describe": "tsc && node build/commands/command --command describe",
+    "list": "tsc && node build/commands/command --command list",
     "producer": "tsc && node build/actors/producer",
-    "consumer": "tsc && node build/actors/consumer"
+    "consumer": "tsc && node build/actors/consumer",
+    "connect": "tsc && node build/connect/connect"
   },
   "author": "",
   "license": "ISC",
