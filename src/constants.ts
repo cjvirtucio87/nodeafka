@@ -1,7 +1,7 @@
 import parsed from './utils/argv-parser';
 import getArgv from './utils/argv-getter';
 import getConfigFile from './utils/config-file';
-import getBinPath from './utils/kafka-bin-path';
+import getPlatformBin from './utils/kafka-bin';
 
 import { join, sep } from 'path';
 
@@ -11,8 +11,10 @@ import { join, sep } from 'path';
 // kafka path
 const { KAFKA_PATH } = process.env;
 
-// windows
-const KAFKA_BIN_PATH = getBinPath(KAFKA_PATH);
+// bin path
+const getKafkaBin = getPlatformBin(KAFKA_PATH);
+const KAFKA_BIN_PATH = getKafkaBin('path');
+const KAFKA_BIN_EXT = getKafkaBin('ext');
 
 // config
 const KAFKA_CONFIG = join(KAFKA_PATH, 'config');
