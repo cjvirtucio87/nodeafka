@@ -1,7 +1,7 @@
 {
-  "name": "kafka-quick-start",
-  "version": "1.0.0",
-  "description": "",
+  "name": "nodeafka",
+  "version": "0.0.1",
+  "description": "A collection of scripts to run different components of Apache Kafka.",
   "main": "main.js",
   "scripts": {
     "start": "tsc && node build/main",
