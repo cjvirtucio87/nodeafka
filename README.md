@@ -21,7 +21,7 @@ Run a kafka server (default config is the `KAFKA_PATH/config/server.properties` 
 nodeafka serve
 ```
 
-Run a server with a custom config file (place it in `./config/kafka/`):
+Run a server with a custom config file (e.g. `./config/kafka/your-server-name.properties`):
 ```
 nodeafka serve --server your-server-name
 ```
