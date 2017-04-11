@@ -1,10 +1,10 @@
 {
   "name": "nodeafka",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A collection of scripts to run different components of Apache Kafka.",
   "main": "main.js",
   "bin": {
-    "nodeafka": "build/main"
+    "nodeafka": "build/main.js"
   },
   "scripts": {
     "prepublish": "tsc",
