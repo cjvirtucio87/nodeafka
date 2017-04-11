@@ -1,6 +1,6 @@
 {
   "name": "nodeafka",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "A collection of scripts to run different components of Apache Kafka.",
   "main": "main.js",
   "bin": {
@@ -19,9 +19,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "@types/node": "^7.0.12",
     "lodash": "^4.17.4",
-    "typescript": "^2.2.2"
+    "typescript": "^2.2.2"    
   }
 }
