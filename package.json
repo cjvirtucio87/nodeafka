@@ -7,7 +7,7 @@
     "nodeafka": "build/main.js"
   },
   "scripts": {
-    "publish": "tsc",
+    "prepublish": "tsc",
     "zookeeper": "tsc && node build/servers/server --server-type zookeeper",
     "serve": "tsc && node build/servers/server",
     "create": "tsc && node build/commands/command --command create",
