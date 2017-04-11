@@ -18,7 +18,8 @@ const KAFKA_BIN_EXT = getKafkaBin('ext');
 
 // config
 export const KAFKA_CONFIG_PATH = join(KAFKA_PATH, 'config');
-export const CUSTOM_CONFIG_PATH = join('config', 'kafka');
+export const CUSTOM_CONFIG_PATH = join(process.cwd(), 'config', 'kafka');
+// export const CUSTOM_CONFIG_PATH = join('config', 'kafka');
 const SERVER_CONFIG = getConfigFile('--server', '.properties', 'server');
 const TOPIC_NAME = getArgv('--topic', '');
 const REPLICATION_FACTOR = getArgv('--replication-factor', '1');

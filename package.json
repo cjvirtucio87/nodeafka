@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A collection of scripts to run different components of Apache Kafka.",
   "main": "main.js",
+  "bin": {
+    "nodeafka": "build/main"
+  },
   "scripts": {
     "start": "tsc && node build/main",
     "zookeeper": "tsc && node build/servers/server --server-type zookeeper",

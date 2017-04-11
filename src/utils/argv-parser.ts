@@ -9,7 +9,7 @@ const onReduce = (acc, next) => {
 }
 
 const parsed = argv.length < 2 ? {} : argv
-                                        .slice(2)
+                                        .slice(3)
                                         .reduce(onReduce, { prev: null });
 
 export default parsed;
