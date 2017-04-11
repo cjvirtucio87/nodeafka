@@ -1,4 +1,4 @@
-exports = exports || {};
+#!/usr/bin/env node
 
 import runZookeeper from './servers/zookeeper';
 import runKafkaServer from './servers/kafka-server';
