@@ -28,6 +28,8 @@ function main() {
         return runList();
     case 'connect':
         return runConnect();
+    default:
+        console.log("Enter one of the following arguments: [zookeeper, serve, producer, consumer, create, describe, list, connect].");
     }
 }
 
