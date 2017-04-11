@@ -1,3 +1,5 @@
+exports = exports || {};
+
 import runZookeeper from './servers/zookeeper';
 import runKafkaServer from './servers/kafka-server';
 import runProducer from './actors/kafka-producer';
