@@ -7,7 +7,7 @@
     "nodeafka": "build/main"
   },
   "scripts": {
-    "start": "tsc && node build/main",
+    "preinstall": "tsc",
     "zookeeper": "tsc && node build/servers/server --server-type zookeeper",
     "serve": "tsc && node build/servers/server",
     "create": "tsc && node build/commands/command --command create",
