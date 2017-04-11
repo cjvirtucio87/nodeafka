@@ -1,14 +1,13 @@
 {
   "name": "nodeafka",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A collection of scripts to run different components of Apache Kafka.",
   "main": "main.js",
   "bin": {
     "nodeafka": "build/main"
   },
   "scripts": {
-    "preinstall": "npm install",
-    "postinstall": "tsc",
+    "prepublish": "tsc",
     "zookeeper": "tsc && node build/servers/server --server-type zookeeper",
     "serve": "tsc && node build/servers/server",
     "create": "tsc && node build/commands/command --command create",
