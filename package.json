@@ -1,6 +1,6 @@
 {
   "name": "nodeafka",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A collection of scripts to run different components of Apache Kafka.",
   "main": "main.js",
   "bin": {
